@@ -21,7 +21,7 @@ public class Program {
 
 
         System.out.print("Search for a person via first or last name: ");
-        String name = keyboard.nextLine();
+        String name = keyboard.nextLine().trim();
 
         for (Person individual : people) {
             if (name.equalsIgnoreCase(individual.getFirstName()) || name.equalsIgnoreCase(individual.getLastName())) {
