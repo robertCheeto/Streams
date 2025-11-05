@@ -1,4 +1,4 @@
-package com.pluralsight.streams;
+package com.pluralsight.traditional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,13 +33,25 @@ public class Program {
             }
         }
 
-        double averageAge = 0;
+        int averageAge = 0;
+        int oldestAge = -1;
+        int youngestAge = 1000;
 
-        for (int i = 0; i < filtered.size(); i++) {
-            averageAge += age.getAge();
+        for (Person individual : people) {
+            averageAge += individual.getAge();
+
+            if (individual.getAge() > oldestAge) {
+                oldestAge = individual.getAge();
+            }
+
+            if (individual.getAge() < youngestAge) {
+                youngestAge = individual.getAge();
+            }
         }
-            System.out.print ("Average Age of People in New List: " );
-        }
+
+        System.out.println("The average age of everyone is: " + (averageAge / people.size()));
+        System.out.println("The oldest age of everyone is: " + oldestAge);
+        System.out.println("The youngest age of everyone is: " + youngestAge);
 
     }
 }
