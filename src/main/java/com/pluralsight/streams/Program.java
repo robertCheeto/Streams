@@ -1,6 +1,7 @@
 package com.pluralsight.streams;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Program {
@@ -25,9 +26,10 @@ public class Program {
 
         for (Person individual : people) {
             if (name.equalsIgnoreCase(individual.getFirstName()) || name.equalsIgnoreCase(individual.getLastName())) {
-                System.out.println(individual);
+                List<Person> filtered = new ArrayList<>();
+                filtered.add(individual);
+                System.out.println(filtered);
             }
-
         }
 
 
