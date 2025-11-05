@@ -24,15 +24,22 @@ public class Program {
         System.out.print("Search for a person via first or last name: ");
         String name = keyboard.nextLine().trim();
 
+        List<Person> filtered = new ArrayList<>();
+
         for (Person individual : people) {
             if (name.equalsIgnoreCase(individual.getFirstName()) || name.equalsIgnoreCase(individual.getLastName())) {
-                List<Person> filtered = new ArrayList<>();
                 filtered.add(individual);
                 System.out.println(filtered);
             }
         }
 
+        double averageAge = 0;
 
+        for (int i = 0; i < filtered.size(); i++) {
+            averageAge += age.getAge();
+        }
+            System.out.print ("Average Age of People in New List: " );
+        }
 
     }
 }
